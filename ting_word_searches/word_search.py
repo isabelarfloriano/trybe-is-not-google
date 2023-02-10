@@ -7,9 +7,9 @@ def exists_word(word, instance):
             "arquivo": file["nome_do_arquivo"],
             "ocorrencias": [],
         }
-        for line in file:
+        for item, line in enumerate(file["linhas_do_arquivo"]):
             if word.casefold() in line.casefold():
-                lines["ocorrencias"].append({"linha": file.index(line) + 1})
+                lines["ocorrencias"].append({"linha": item + 1})
         if lines["ocorrencias"]:
             result.append(lines)
 
