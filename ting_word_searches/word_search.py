@@ -19,11 +19,11 @@ def exists_word(word, instance):
 def search_by_word(word, instance):
     result = exists_word(word, instance)
 
-    for i, result in enumerate(result):
-        for ocorrencias in result["ocorrencias"]:
-            lines = instance.result(i)
-            ocorrencias["conteudo"] = (
-                lines["linhas_do_arquivo"][ocorrencias["linha"] - 1]
+    for i, element in enumerate(result):
+        for occurrence in element["ocorrencias"]:
+            lines = instance.search(i)
+            occurrence["conteudo"] = (
+                lines["linhas_do_arquivo"][occurrence["linha"] - 1]
             )
 
     return result
