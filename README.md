@@ -23,6 +23,63 @@ Foi desenvolvida uma aplicação em Python que simula um algoritmo de indexaçã
     <li>Instale as dependências com o comando <code>python3 -m pip install -r dev-requirements.txt</code>.</li>
     <li>Para executar todos os testes, execute o comando <code>python3 -m pytest</code> na raiz do projeto.</li>
   </ol>
+  <p>A seguir estão os exemplos para executar a aplicação, descritos no arquivo main.py. Para executar a aplicação, digite o seguinte comando: <code>python3 -m main</code></p>
+    <ol>
+    <li>Para criar uma instância da classe Queue e adicionar informações presentes nos arquivos TXT localizados no diretório 'statics':
+      <dl>
+        <dd><code>queue = Queue()</code></dd>
+        <dd><code>process('statics/arquivo_teste.txt', queue)</dd>
+        <dd><code>process('statics/nome_pedro.txt', queue)</code></dd>
+        <dd><code>print('--> Primeiro Elemento da Fila:', queue.search(0))</code></dd>
+        <dd><code>print('--> Segundo Elemento da Fila:', queue.search(1))</code></dd>
+      </dl>
+    </li>
+    <li>Para localizar as informações por meio do índice usando a função 'file_metadata':
+      <dl>
+        <dd><code>file_metadata(queue, 0)</code> - Retorna o primeiro elemento</dd>
+        <dd><code>file_metadata(queue, 1)</code> - Retorna o segundo elemento</dd>
+        <dd><code>file_metadata(queue, 99)</code> - Retorna "Posição inválida"</dd>
+      </dl>
+    </li>
+    <li>Para criar um relatório de busca de palavras presentes na instância usando as funções 'exists_word' e 'search_by_word':
+      <dl>
+        <dd><code>print(exists_word('adoção', queue))</code></dd>
+        <dd>Retorno:
+            [
+              {
+                'palavra': 'adoção',
+                'arquivo': 'statics/arquivo_teste.txt,
+                'ocorrencias': [
+                    {'linha': 2},
+                 ],
+              },
+            ]
+        </dd>
+        <dd><code>print(search_by_word('adoção', queue))</code></dd>
+        <dd>Retorno:
+            [
+              {
+                'palavra': 'adoção',
+                'arquivo': 'statics/arquivo_teste.txt,
+                'ocorrencias': [
+                    {
+                      'linha': 2,
+                      'conteudo': 'é fundamental ressaltar que a adoção de políticas descentralizadoras nos obriga'
+                    },
+                 ],
+              },
+            ]
+        </dd>
+      </dl>
+    </li>
+    <li>Para remover as informações presentes na instância criada, use a função 'remove':
+      <dl>
+        <dd><code>remove(queue)</code> - Arquivo statics/arquivo_teste.txt removido com sucesso</dd>
+        <dd><code>remove(queue)</code> - Arquivo statics/nome_pedro.txt removido com sucesso</dd>
+        <dd><code>file_metadata(queue, 0)</code> - Retorna "Posição inválida"</dd>
+      </dl>
+    </li>
+  </ol>
 </details>
 <details>
   <summary><strong>Estrutura do Projeto</strong></summary><br />
