@@ -121,68 +121,32 @@ Foi desenvolvida uma aplicação em Python que simula um algoritmo de indexaçã
   ```
 </details>
 <details>
-  <summary><strong>Detalhes sobre Testes Desenvolvidos</strong></summary><br />
-  <p>tests/product/test_product.py</p>
+  <summary><strong>Detalhes sobre Teste Desenvolvido</strong></summary><br />
+  <p>tests/priority_queue/test_priority_queue.py</p>
     <ul>
-      <li>Implementação dos testes para a classe Product</li>
-      <li>Verificao correto preenchimento dos seguintes atributos:</li>
-            <ul>
-                 <li>id (int)</li>
-                 <li>nome_da_empresa (string)</li>
-                 <li>nome_do_produto (string)</li>
-                 <li>data_de_fabricacao (string)</li>
-                 <li>data_de_validade (string)</li>
-                 <li>numero_de_serie (string)</li>
-                 <li>instrucoes_de_armazenamento (string)</li>
-             </ul>
-      <li>Garante a criação de um novo produto com todos os atributos corretamente preenchidos.</li>
-    </ul>	
-  <p>tests/product_report/test_product_report.py</p>
-    <ul>
-      <li>Implementação dos testes para a a criação do relatório presente na classe Product</li>
-      <li>Garante a formulação de uma frase construída com as informações do produto, que será muito útil para etiquetarmos o estoque.</li>
-      <li>Exemplo da frase:</li>
-            <ul>
-                 <li>O produto `farinha` fabricado em `01-05-2021` por `Farinini` com validade até `02-06-2023` precisa ser armazenado `ao abrigo de luz`.</li>
-             </ul>
-    </ul>
-  <p>tests/report_decorator/test_report_decorator.py</p>
-    <ul>
-      <li>Implementação dos testes para a classe ColoredReport</li>
-      <li>Garante o retorno do relatório devidamente colorido:
-            <ul>
-                 <li>🟩 Verde:</li>
-                      <ul>
-                          <li>"Data de fabricação mais antiga:"</li>
-                          <li>"Data de validade mais próxima:"</li>
-                          <li>"Empresa com mais produtos:"</li>
-                      </ul>
-                 <li>🟦 Azul: As datas</li>
-                 <li>🟥 Vermelho: Nome da empresa com mais produtos</li>
-             </ul>
-       </li>
+      <li>Implementação dos testes para a classe PriorityQueue</li>
+      <li>Garante que arquivos com menos de 5 linhas são armazenados de forma prioritária na fila.</li>
     </ul>	
 </details>
 <details>
   <summary><strong>Detalhes sobre Classes Desenvolvidos</strong></summary><br />
-  <p>inventory_report/reports/simple_report.py</p>
+  <p>ting_file_management/queue.py</p>
     <ul>
-      <li>Classe para gerar a versão simplificada do relatório</li>
+      <li>Classe criada para armazenamento de arquivos por filas</li>
     </ul>	
-  <p>inventory_report/reports/complete_report.py</p>
+  <p>ting_file_management/file_management.py</p>
     <ul>
-      <li>Classe para gerar a versão completa do relatório	inventory_report/reports/complete_report.py</li>
+      <li>Função capaz de ler os arquivos TXT e retorna em formato de array/lista</li>
     </ul>
-  <p>inventory_report/inventory/inventory.py</p>
+  <p>ting_file_management/file_process.py</p>
     <ul>
-      <li>Classe para gerar os relatório a partir de arquivos</li>
+      <li>Função <code>process</code> - importa informações do arquivo TXT e adicionar na instância da Classe Queue informada</li>
+      <li>Função <code>remove</code> - remove o primeiro arquivo presente na instância informada</li>
+      <li>Função <code>file_metadata</code> - encontra um dado presente na instância atráves do index informado</li>
     </ul>
-  <p>inventory_report/importer/importer.py</p>
+  <p>ting_word_searches/word_search.py</p>
     <ul>
-      <li>Classe abstrata para aplicar o padrão de projeto Strategy</li>
-    </ul>
-  <p>inventory_report/inventory/inventory_iterator.py</p>
-    <ul>
-      <li>Refatoração da classe Inventory para aplicar o padrão de projeto Iterator</li>
+      <li>Função <code>exists_word</code> - verifica existência de uma palavra em todos os arquivos processados, retornando um relatório simplificado</li>
+      <li>Função <code>search_by_word</code> - verifica existência de uma palavra em todos os arquivos processados, retornando um relatório completo</li>
     </ul>
 </details>
